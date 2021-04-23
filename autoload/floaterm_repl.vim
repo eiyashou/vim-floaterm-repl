@@ -43,7 +43,7 @@ function! floaterm_repl#run() range
     silent execute ':FloatermKill! repl'
 
     if len(l:filetype)>0 && !empty(l:filepath)
-        let l:command=':FloatermNew --name=repl --position=bottom --autoclose=0 --height=0.4 --width=0.9 --title='.filetype
+        let l:command=':FloatermNew --name=repl --autoclose=0 --title='.filetype
         let l:command= l:command. printf(" %s %s %s %s",l:filerunner,l:filetype,l:filepath,l:args)
         silent execute l:command
         stopinsert
