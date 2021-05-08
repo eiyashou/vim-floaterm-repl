@@ -44,7 +44,7 @@ function! floaterm_repl#run() range
     endif
 
     if len(l:filetype)>0
-        if l:filetype == "sql" || (len(l:splitHeadder) > 1 && l:splitHeadder[1] == "repl")
+        if len(l:splitHeadder) > 1 && l:splitHeadder[1] == "repl"
             let l:command=":".(startLine+1).",".(endLine-1)."FloatermSend"
         elseif !empty(l:filepath)
             let l:command=':FloatermNew --name=repl --autoclose=0 --width=70 --height=30 --position=bottomright'
