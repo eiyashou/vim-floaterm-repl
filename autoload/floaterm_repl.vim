@@ -46,6 +46,8 @@ function! floaterm_repl#run() range
     if len(l:filetype)>0
         if len(l:splitHeadder) > 1 && l:splitHeadder[1] == "repl"
             let l:command=":".(startLine+1).",".(endLine-1)."FloatermSend"
+            echo startLine
+            echo endLine
         elseif !empty(l:filepath)
             let l:command=':FloatermNew --name=repl --autoclose=0 --width=70 --height=30 --position=bottomright'
             let l:command= l:command. printf(" %s %s %s %s",l:filerunner,l:filetype,l:filepath,l:args)
